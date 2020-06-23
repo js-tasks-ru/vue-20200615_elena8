@@ -12,7 +12,6 @@ const MEETUP_ID = 6;
  * @return {string} - ссылка на изображение митапа
  */
 function getMeetupCoverLink(meetup) {
-  if (!meetup.imageId) return null;
   return `${API_URL}/images/${meetup.imageId}`;
 }
 
@@ -62,7 +61,7 @@ export const app = new Vue({
     meetup() {
       return {
         ...this.item,
-        cover: getMeetupCoverLink(this.item),
+        cover: this.item.imageId ? getMeetupCoverLink(this.item) :  null,
         localeDate: new Date(this.item.date).toLocaleString(navigator.language, {
           year: 'numeric',
           month: 'short',

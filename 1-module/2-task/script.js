@@ -12,6 +12,7 @@ const MEETUP_ID = 6;
  * @return {string} - ссылка на изображение митапа
  */
 function getMeetupCoverLink(meetup) {
+  if (!meetup.imageId) return null;
   return `${API_URL}/images/${meetup.imageId}`;
 }
 

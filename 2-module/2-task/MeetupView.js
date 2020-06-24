@@ -8,7 +8,7 @@ export const MeetupView = {
 
   template: `
     <div>
-      <meetup-cover :title="meetup.title" :meetup="meetup" />
+      <meetup-cover :title="meetup.title" link="https://course-vue.javascript.ru/api/images/2" />
       <div class="container">
         <div class="meetup">
           <div class="meetup__content">

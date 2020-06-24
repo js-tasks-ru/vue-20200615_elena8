@@ -9,7 +9,7 @@ export const MeetupAgendaItem = {
               </div>
               <div class="meetup-agenda__item-col">{{agendaItem.startsAt}} - {{agendaItem.endsAt}}</div>
               <div class="meetup-agenda__item-col">
-                <h5 class="meetup-agenda__title" v-html="defaultTitle"></h5>
+                <h5 class="meetup-agenda__title" v-html="title"></h5>
                 <p v-if="agendaItem.type === 'talk'">
                   <span>{{agendaItem.speaker}}</span>
                   <span class="meetup-agenda__dot" />
@@ -30,7 +30,7 @@ export const MeetupAgendaItem = {
     icon() {
       return '/assets/icons/icon-' + agendaItemIcons[this.agendaItem.type] + '.svg'
     },
-    defaultTitle() {
+    title() {
       return this.agendaItem.title ? this.agendaItem.title : agendaItemTitles[this.agendaItem.type]
     }
   },

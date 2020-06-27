@@ -68,8 +68,7 @@ export default {
       return this.options.find((el) => el.value === this.value)
     },
     hasIcons() {
-      // условие не верное, должно быть return this.options.every(el => el.icon)
-      return !this.options.every(el => el.icon)
+      return this.options.some(el => el.icon)
     },
   }
 };

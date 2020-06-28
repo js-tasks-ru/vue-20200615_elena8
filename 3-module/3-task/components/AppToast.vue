@@ -24,11 +24,9 @@ export default {
   data() {
     return {
       successMessage: {
-        open: false,
         list: []
       },
       errorMessage: {
-        open: false,
         list: []
       }
     }
@@ -36,19 +34,15 @@ export default {
 
   methods: {
     error(message) {
-      this.errorMessage.open = true
       this.errorMessage.list.push(message)
       setTimeout(() => {
-        this.errorMessage.open = false
         this.errorMessage.list.shift()
       }, DELAY)
     },
 
     success(message) {
-      this.successMessage.open = true
       this.successMessage.list.push(message)
       setTimeout(() => {
-        this.successMessage.open = false
         this.successMessage.list.shift()
       }, DELAY)
     },
